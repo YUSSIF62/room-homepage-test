@@ -4,15 +4,8 @@ import arrow from "../images/icon-arrow.svg";
 import left from "../images/icon-angle-left.svg";
 import right from "../images/icon-angle-right.svg";
 
-interface DataItem {
-  id: number;
-  title: string;
-  desc: string;
-  mobile: string;
-  desktop: string;
-}
 
-const data: DataItem[] = [
+const data = [
   {
     id: 1,
     title: "Discover innovative ways to decorate",
@@ -34,122 +27,83 @@ const data: DataItem[] = [
     mobile: "./images/mobile-image-hero-3.jpg",
     desktop: "./images/desktop-image-hero-3.jpg",
   },
-];
+]
 
-const SectionWrapper = styled.section`
-  margin: 0;
-  padding: 0;
-`;
-
-const Article = styled.article<{ visible: boolean }>`
-  display: ${({ visible }) => (visible ? "grid" : "none")};
-  grid-template-columns: 1fr;
-  @media (min-width: 1024px) {
-    grid-template-columns: repeat(2, 1fr);
-    place-items: center;
-  }
-`;
-
-const Picture = styled.picture`
-  position: relative;
-`;
-
-const Image = styled.img`
-  width: 100%;
-`;
-
-const Controls = styled.ul`
-  position: absolute;
-  right: 0;
-  bottom: -0.5rem;
-  display: flex;
-`;
-
-const ControlButton = styled.button`
-  transition: all 0.2s;
-  background: black;
-  &:hover {
-    background: #4b5563; /* Tailwind's bg-neutral-700 color */
-  }
-  img {
-    padding: 1.5rem;
-  }
-`;
-
-const Content = styled.div`
-  padding: 2rem;
-  @media (min-width: 1024px) {
-    padding: 3rem;
-  }
-`;
-
-const Title = styled.h1`
-  font-size: 1.875rem; /* Tailwind's text-3xl size */
-  color: #1e293b; /* Tailwind's text-slate-900 color */
-  @media (min-width: 1024px) {
-    font-size: 3rem; /* Tailwind's text-5xl size */
-  }
-`;
-
-const Description = styled.p`
-  margin: 1.5rem 0;
-  opacity: 0.75;
-  color: #1e293b; /* Tailwind's text-slate-900 color */
-`;
-
-const ShopButton = styled.button`
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  text-transform: uppercase;
-  &:hover {
-    opacity: 0.75;
-  }
-  letter-spacing: 0.7rem;
-`;
 
 const Showcase: React.FC = () => {
-  const [items] = useState<DataItem[]>(data);
+  const [items] = useState(data);
   const [slideIndex, setSlideIndex] = useState<number>(1);
 
-  const nextSlide = () => {
-    setSlideIndex((prev) => (prev !== items.length ? prev + 1 : 1));
-  };
+  function nextSlide() {
+    if (slideIndex !== items.length) {
+      setSlideIndex(slideIndex + 1)
+    } else if (slideIndex === items.length) {
+      setSlideIndex(1)
+    }
+  }
 
-  const previousSlide = () => {
-    setSlideIndex((prev) => (prev !== 1 ? prev - 1 : items.length));
-  };
+  function previousSlide() {
+    if (slideIndex !== 1) {
+      setSlideIndex(slideIndex - 1)
+    } else if (slideIndex === 1) {
+      setSlideIndex(items.length)
+    }
+  }
 
   return (
-    <SectionWrapper>
-      {items.map((item, index) => (
-        <Article key={item.id} visible={slideIndex === index + 1}>
-          <Picture>
-            <source media="(min-width: 768px)" srcSet={item.desktop} />
-            <Image src={item.mobile} alt={item.title} />
-            <Controls>
-              <li>
-                <ControlButton onClick={previousSlide}>
-                  <img src={left} alt="Previous" />
-                </ControlButton>
-              </li>
-              <li>
-                <ControlButton onClick={nextSlide}>
-                  <img src={right} alt="Next" />
-                </ControlButton>
-              </li>
-            </Controls>
-          </Picture>
-          <Content>
-            <Title>{item.title}</Title>
-            <Description>{item.desc}</Description>
-            <ShopButton>
-              Shop Now <img src={arrow} alt="Arrow" />
-            </ShopButton>
-          </Content>
-        </Article>
-      ))}
-    </SectionWrapper>
+    <section>
+        {items.map((item, index) => (
+          <article
+            key={item.id}
+            className={
+              slideIndex === index + 1
+                ? "grid grid-cols-1 lg:grid-cols-2 lg:place-items-center"
+                : "hidden"
+            }
+          >
+            <div className="relative">
+              <picture>
+                <source media="(min-width: 768px)" srcSet={item.desktop} />
+                <img src={item.mobile} alt={item.title} className="w-full" />
+              </picture>
+
+              <ul className="absolute right-0 flex -bottom-2">
+                <li>
+                  <button
+                    onClick={previousSlide}
+                    className="transition-all duration-200 bg-black hover:bg-neutral-700"
+                  >
+                    <img src={left} alt="" className="p-6" />
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={nextSlide}
+                    className="transition-all duration-200 bg-black hover:bg-neutral-700"
+                  >
+                    <img src={right} alt="" className="p-6" />
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            <div className="p-8 lg:p-12">
+              <h1 className="text-3xl text-slate-900 lg:text-5xl">
+                {item.title}
+              </h1>
+              <p className="my-6 opacity-75 text-slate-900">{item.desc}</p>
+              <button
+                className="flex items-center gap-4 uppercase hover:opacity-75"
+                style={{
+                  letterSpacing: "0.7rem",
+                }}
+              >
+                Shop Now <img src={arrow} alt="" />
+              </button>
+            </div>
+          </article>
+        ))}
+      </section>
   );
 };
 
