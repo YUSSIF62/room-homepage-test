@@ -18,7 +18,7 @@ const Article = styled.article<{ padded?: boolean }>`
   ${({ padded }) =>
     padded &&
     `
-    padding: 2rem;
+    padding: 1rem;
     @media (min-width: 1024px) {
       padding: 3rem;
     }
