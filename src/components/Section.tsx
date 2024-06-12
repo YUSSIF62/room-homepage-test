@@ -9,7 +9,7 @@ const Section: React.FC = () => {
           <img src={aboutDark} alt="" className="w-full" />
         </article>
 
-        <article className="p-2 lg:p-12">
+        <article className="p-2 lg:p-9">
           <h2 className="flex items-center gap-3 text-xl font-bold uppercase lg:text-xl" style={{
                   letterSpacing: "0.2rem",
                 }}>
