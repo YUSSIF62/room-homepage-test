@@ -87,7 +87,7 @@ const Showcase: React.FC = () => {
             </div>
 
             <div className="p-8 lg:p-12">
-              <h1 className="text-3xl text-slate-900 lg:text-5xl">
+              <h1 className="text-3xl font-bold text-slate-900 lg:text-5xl">
                 {item.title}
               </h1>
               <p className="my-6 opacity-75 text-slate-900">{item.desc}</p>
