@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import arrow from "../images/icon-arrow.svg";
 import left from "../images/icon-angle-left.svg";
 import right from "../images/icon-angle-right.svg";
