@@ -30,6 +30,7 @@ const Logo = styled.img`
 const Nav = styled.nav<{ isOpen: boolean }>`
   width: 100%;
   padding-top: 2rem;
+  
   position: absolute;
   display: ${(props) => (props.isOpen ? "block" : "none")};
 
@@ -69,6 +70,10 @@ const NavList = styled.ul`
   align-items: center;
   justify-content: center;
   gap: 1rem;
+
+  @media (min-width: 768px){
+  justify-content: flex-start;
+  }
 `;
 
 const NavButton = styled.button`
@@ -84,6 +89,7 @@ const NavButton = styled.button`
     }
   }
 `;
+
 
 const MenuButton = styled.button`
   position: absolute;
