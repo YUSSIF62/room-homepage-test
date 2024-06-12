@@ -9,8 +9,10 @@ const Section: React.FC = () => {
           <img src={aboutDark} alt="" className="w-full" />
         </article>
 
-        <article className="p-8 lg:p-12">
-          <h2 className="text-2xl font-semibold uppercase lg:text-3xl">
+        <article className="p-2 lg:p-12">
+          <h2 className="flex items-center gap-3 text-xl font-bold uppercase lg:text-xl" style={{
+                  letterSpacing: "0.2rem",
+                }}>
             About our furniture
           </h2>
           <p className="opacity-75 mb-7 text-slate-900">
