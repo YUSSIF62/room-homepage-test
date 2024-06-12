@@ -22,7 +22,7 @@ const Header: React.FC = () => {
           <nav
             className={`${isOpen ? "open w-full py-8 lg:py-0 lg:w-auto" : ""}`}
           >
-            <ul className="flex flex-wrap items-center justify-center gap-4">
+            <ul className="flex flex-wrap items-center justify-center gap-4 font-bold lg:font-normal">
               <li>
                 <button className="transition-all duration-200 border-b-2 border-transparent hover:border-neutral-900 lg:text-white lg:hover:border-b-white">
                   home
