@@ -4,7 +4,7 @@ import aboutLight from "../images/image-about-light.jpg";
 
 const Section: React.FC = () => {
   return (
-<section className="grid grid-cols-1 lg:grid-cols-3">
+  <section className="grid grid-cols-1 lg:grid-cols-3">
         <article>
           <img src={aboutDark} alt="" className="w-full" />
         </article>
@@ -13,7 +13,7 @@ const Section: React.FC = () => {
           <h2 className="text-2xl font-semibold uppercase lg:text-3xl">
             About our furniture
           </h2>
-          <p className="mt-6 opacity-75 text-slate-900">
+          <p className="opacity-75 mb-7 text-slate-900">
             Our multifunctional collection blends design and function to suit
             your individual taste. Make each room unique, or pick a cohesive
             theme that best express your interests and what inspires you. Find
