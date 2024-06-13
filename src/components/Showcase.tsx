@@ -66,7 +66,8 @@ const Showcase: React.FC = () => {
                 <img src={item.mobile} alt={item.title} className="w-full" />
               </picture>
 
-              <ul className="absolute right-0 flex -bottom-2">
+              <ul className="absolute right-0 flex lg:-right-40 lg:-bottom-2 -bottom-2">
+             
                 <li>
                   <button
                     onClick={previousSlide}
