@@ -97,7 +97,7 @@ const Showcase: React.FC = () => {
                 }}
               >
                 Shop Now <img src={arrow} alt="" />
-              </button>           
+              </button>    
             </div>
           </article>
         ))}
