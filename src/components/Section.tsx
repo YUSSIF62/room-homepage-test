@@ -9,13 +9,13 @@ const Section: React.FC = () => {
           <img src={aboutDark} alt="" className="w-full" />
         </article>
 
-        <article className="p-2 lg:p-8">
-          <h2 className="flex items-center gap-3 text-xl font-bold uppercase lg:text-xl" style={{
+        <article className="p-6 lg:p-9">
+          <h2 className="flex items-center gap-3 text-xl font-semibold uppercase" style={{
                   letterSpacing: "0.2rem",
                 }}>
             About our furniture
           </h2>
-          <p className="opacity-75 mb-7 text-slate-900">
+          <p className="mb-8 opacity-75 text-slate-900">
             Our multifunctional collection blends design and function to suit
             your individual taste. Make each room unique, or pick a cohesive
             theme that best express your interests and what inspires you. Find

@@ -22,6 +22,22 @@ nav.open {
   @apply bg-white shadow-lg lg:shadow-none lg:bg-transparent;
 }
 
+.arrow-button {
+  border:none;
+  background:black;
+  display:block;
+  padding-block: 1rem;
+  width: 3rem;
+  display:grid;
+  place-items: center;
+}
+
+
+.arrow-button:hover {
+  background: var(--dark-gray);
+  cursor: pointer;
+}
+
 @media (min-width: 1024px) {
   nav {
     position: relative;
@@ -29,3 +45,5 @@ nav.open {
     left: 0;
   }
 }
+
+

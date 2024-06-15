@@ -65,7 +65,7 @@ const Showcase: React.FC = () => {
                 <source media="(min-width: 768px)" srcSet={item.desktop} />
                 <img src={item.mobile} alt={item.title} className="w-full" />
               </picture>
-              <ul className="absolute right-0 flex -bottom-2">
+              <ul className="absolute right-0 flex -bottom-1.5">
                 <li>
                   <button
                     onClick={previousSlide}
@@ -89,15 +89,15 @@ const Showcase: React.FC = () => {
               <h1 className="text-3xl font-bold text-slate-900 lg:text-5xl">
                 {item.title}
               </h1>
-              <p className="my-6 opacity-75 text-slate-900">{item.desc}</p>
+              <p className="my-6 opacity-65 text-slate-900">{item.desc}</p>
               <button
-                className="flex items-center gap-4 uppercase hover:opacity-75"
+                className="flex items-center gap-4 font-bold uppercase hover:opacity-75"
                 style={{
                   letterSpacing: "0.7rem",
                 }}
               >
                 Shop Now <img src={arrow} alt="" />
-              </button>    
+              </button>           
             </div>
           </article>
         ))}

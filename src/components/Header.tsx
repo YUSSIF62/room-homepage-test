@@ -28,7 +28,7 @@ const Header: React.FC = () => {
                   home
                 </button>
               </li>
-              <li>
+              <li> 
                 <button className="transition-all duration-200 border-b-2 border-transparent hover:border-neutral-900 lg:text-white lg:hover:border-b-white">
                   shop
                 </button>
