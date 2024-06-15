@@ -22,16 +22,6 @@ nav.open {
   @apply bg-white shadow-lg lg:shadow-none lg:bg-transparent;
 }
 
-.arrow-button {
-  border:none;
-  background:black;
-  display:block;
-  padding-block: 1rem;
-  width: 3rem;
-  display:grid;
-  place-items: center;
-}
-
 
 .arrow-button:hover {
   background: var(--dark-gray);
