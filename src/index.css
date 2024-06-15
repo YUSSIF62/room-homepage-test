@@ -22,12 +22,6 @@ nav.open {
   @apply bg-white shadow-lg lg:shadow-none lg:bg-transparent;
 }
 
-
-.arrow-button:hover {
-  background: var(--dark-gray);
-  cursor: pointer;
-}
-
 @media (min-width: 1024px) {
   nav {
     position: relative;
