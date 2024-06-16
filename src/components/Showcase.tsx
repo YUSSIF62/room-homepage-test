@@ -99,26 +99,22 @@ const Showcase: React.FC = () => {
                 Shop Now <img src={arrow} alt="" />
               </button>           
             </div>
-            <div className="absolute right-7 flex -bottom-1.5">
-            <ul className="">
-                <li>
-                  <button
-                    onClick={previousSlide}
-                    className="transition-all duration-200 bg-black hover:bg-neutral-700"
-                  >
-                    <img src={left} alt="" className="p-6" />
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={nextSlide}
-                    className="transition-all duration-200 bg-black hover:bg-neutral-700"
-                  >
-                    <img src={right} alt="" className="p-6" />
-                  </button>
-                </li>
-              </ul>
+            <div className="absolute items-center justify-between left-50 hidden px-5 inset-x-45 lg:flex -bottom-5.5">
+              <button
+                onClick={previousSlide}
+                className="transition-all duration-200 bg-black hover:bg-neutral-700"
+              >
+                <img src={left} alt="Previous Slide" className="p-6" />
+              </button>
+              <button
+                onClick={nextSlide}
+                className="transition-all duration-200 bg-black hover:bg-neutral-700"
+              >
+                <img src={right} alt="Next Slide" className="p-6" />
+              </button>
             </div>
+
+           
           </article>
         ))}
       </section>
