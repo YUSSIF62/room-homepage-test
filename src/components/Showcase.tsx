@@ -99,7 +99,7 @@ const Showcase: React.FC = () => {
                 Shop Now <img src={arrow} alt="" />
               </button>           
             </div>
-            <div className="absolute right-0 flex -bottom-1.5">
+            <div className="absolute right-7 flex -bottom-1.5">
             <ul className="">
                 <li>
                   <button
