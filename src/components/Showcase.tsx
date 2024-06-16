@@ -99,7 +99,7 @@ const Showcase: React.FC = () => {
                 Shop Now <img src={arrow} alt="" />
               </button>           
             </div>
-            <div className="absolute items-center justify-between left-50 hidden px-5 inset-x-0 lg:flex -bottom-5.5">
+            <div className="absolute bottom-0 flex justify-between w-full mt-6 lg:mt-8 lg:-mb-8">
               <button
                 onClick={previousSlide}
                 className="transition-all duration-200 bg-black hover:bg-neutral-700"
@@ -113,7 +113,6 @@ const Showcase: React.FC = () => {
                 <img src={right} alt="Next Slide" className="p-6" />
               </button>
             </div>
-
            
           </article>
         ))}
