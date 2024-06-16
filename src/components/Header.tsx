@@ -16,7 +16,7 @@ const Header: React.FC = () => {
           className={`${
             isOpen
               ? "bg-black bg-opacity-75 absolute top-0 left-0 right-0 bottom-0 h-screen"
-              : "bg-transparent lg:bg-transparent"
+              : "bg-transparent"
           } lg:bg-transparent lg:h-auto lg:relative `}
         >
           <nav
