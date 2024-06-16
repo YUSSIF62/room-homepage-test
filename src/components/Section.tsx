@@ -4,7 +4,7 @@ import aboutLight from "../images/image-about-light.jpg";
 
 const Section: React.FC = () => {
   return (
-  <section className="grid grid-cols-1 lg:grid-cols-3">
+  <section className="grid h-screen grid-cols-1 lg:grid-cols-3">
         <article>
           <img src={aboutDark} alt="" className="w-full" />
         </article>
