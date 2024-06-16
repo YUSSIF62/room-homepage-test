@@ -15,7 +15,7 @@ const Section: React.FC = () => {
                 }}>
             About our furniture
           </h2>
-          <p className="mb-8 opacity-75 text-slate-900">
+          <p className="opacity-75 mb-7 text-slate-900">
             Our multifunctional collection blends design and function to suit
             your individual taste. Make each room unique, or pick a cohesive
             theme that best express your interests and what inspires you. Find

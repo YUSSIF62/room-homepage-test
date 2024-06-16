@@ -88,12 +88,12 @@ const Showcase: React.FC = () => {
             </div>
 
             <div className="relative p-8 lg:p-12">
-              <h1 className="px-4 text-3xl font-bold text-slate-900 lg:text-5xl">
+              <h1 className="px-4 text-4xl font-bold text-slate-900 lg:text-5xl">
                 {item.title}
               </h1>
-              <p className="px-4 my-6 opacity-65 text-slate-900">{item.desc}</p>
+              <p className="px-4 my-2 opacity-65 text-slate-900">{item.desc}</p>
               <button
-                className="flex items-center gap-4 px-4 font-bold uppercase hover:opacity-75"
+                className="flex items-center gap-4 px-4 text-xs font-bold uppercase hover:opacity-75"
                 style={{
                   letterSpacing: "0.7rem",
                 }}
