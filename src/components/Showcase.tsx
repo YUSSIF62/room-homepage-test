@@ -61,28 +61,34 @@ const Showcase: React.FC = () => {
             }
           >
             <div className="relative">
-              <picture>
+              <div>
+                <picture>
                 <source media="(min-width: 768px)" srcSet={item.desktop} />
                 <img src={item.mobile} alt={item.title} className="w-full" />
-              </picture>
-              <ul className="absolute right-0 flex -bottom-2">
-                <li>
-                  <button
-                    onClick={previousSlide}
-                    className="transition-all duration-200 bg-black hover:bg-neutral-700"
-                  >
-                    <img src={left} alt="" className="p-6" />
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={nextSlide}
-                    className="transition-all duration-200 bg-black hover:bg-neutral-700"
-                  >
-                    <img src={right} alt="" className="p-6" />
-                  </button>
-                </li>
-              </ul>
+               </picture>
+              </div>
+              
+              <div>
+                <ul className="absolute right-0 flex -bottom-2">
+                  <li>
+                    <button
+                      onClick={previousSlide}
+                      className="transition-all duration-200 bg-black hover:bg-neutral-700"
+                    >
+                      <img src={left} alt="" className="p-6" />
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      onClick={nextSlide}
+                      className="transition-all duration-200 bg-black hover:bg-neutral-700"
+                    >
+                      <img src={right} alt="" className="p-6" />
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              
             </div>
 
             <div className="p-8 lg:p-12">
