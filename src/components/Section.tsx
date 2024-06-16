@@ -10,8 +10,8 @@ const Section: React.FC = () => {
         </article>
 
         <article className="p-6 lg:p-9">
-          <h2 className="flex items-center gap-3 text-xl font-semibold uppercase" style={{
-                  letterSpacing: "0.2rem",
+          <h2 className="flex items-center gap-4 font-bold uppercase text-l" style={{
+                  letterSpacing: "0.3rem",
                 }}>
             About our furniture
           </h2>

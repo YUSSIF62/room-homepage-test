@@ -99,7 +99,7 @@ const Showcase: React.FC = () => {
                 Shop Now <img src={arrow} alt="" />
               </button>           
             </div>
-            <div className="absolute items-center justify-between left-50 hidden px-5 inset-x-45 lg:flex -bottom-5.5">
+            <div className="absolute items-center justify-between left-50 hidden px-5 inset-x-0 lg:flex -bottom-5.5">
               <button
                 onClick={previousSlide}
                 className="transition-all duration-200 bg-black hover:bg-neutral-700"
