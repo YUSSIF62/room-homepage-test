@@ -65,7 +65,7 @@ const Showcase: React.FC = () => {
                 <source media="(min-width: 768px)" srcSet={item.desktop} />
                 <img src={item.mobile} alt={item.title} className="w-full" />
               </picture>
-              <ul className="absolute right-0 lg:hidden flex -bottom-1.5">
+              <ul className="absolute right-0 flex lg:hidden -bottom-2">
                 <li>
                   <button
                     onClick={previousSlide}
