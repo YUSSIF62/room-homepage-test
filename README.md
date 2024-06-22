@@ -195,4 +195,4 @@ In future projects, I plan to:
 - Twitter - [@YussifGomda9247](https://x.com/YussifGomda9247)
 
 ## Acknowledgments
-I would like to thank the Frontend Mentor community for their valuable feedback and support throughout this project. Special thanks to anyone who reviewed my code and provided suggestions for improvements. Your insights were incredibly helpful!
+Special thanks to anyone who reviewed my code and provided suggestions for improvements. Your insights were incredibly helpful!
