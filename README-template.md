@@ -17,7 +17,7 @@ This is a solution to the [Room homepage challenge on Frontend Mentor](https://w
 - [Acknowledgments](#acknowledgments)
 
 ## Overview
-
+This project is a solution to the Room homepage challenge on Frontend Mentor. The challenge involves creating a responsive homepage for a furniture brand, incorporating features such as a slideshow and a responsive navigation menu. The project aims to provide a seamless user experience across different devices and screen sizes.
 ### The challenge
 
 Users should be able to:
@@ -189,10 +189,9 @@ In future projects, I plan to:
 
 ## Author
 
-- Website - [Yussif Abdul-Rahaman](https://www.your-site.com)
+- Website - [Yussif Abdul-Rahaman](https://yussifabdul-rahaman.netlify.app/)
 - Frontend Mentor - [@YUSSIF62](https://www.frontendmentor.io/profile/YUSSIF62)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Twitter - [@YussifGomda9247](https://x.com/YussifGomda9247)
 
 ## Acknowledgments
-
 I would like to thank the Frontend Mentor community for their valuable feedback and support throughout this project. Special thanks to anyone who reviewed my code and provided suggestions for improvements. Your insights were incredibly helpful!
