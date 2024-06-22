@@ -190,7 +190,8 @@ In future projects, I plan to:
 ## Author
 
 - Website - [Yussif Abdul-Rahaman](https://yussifabdul-rahaman.netlify.app/)
-- Frontend Mentor - [@YUSSIF62](https://www.frontendmentor.io/profile/YUSSIF62)
+- LinkedIn - [Yussif Abdul-Rahaman](https://www.linkedin.com/in/yussif-abdul-rahaman/)
+- GitHub - [YUSSIF62](https://github.com/YUSSIF62)
 - Twitter - [@YussifGomda9247](https://x.com/YussifGomda9247)
 
 ## Acknowledgments
