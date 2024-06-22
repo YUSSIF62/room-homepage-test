@@ -1,93 +1,197 @@
-# Frontend Mentor - Room homepage
+# Frontend Mentor - Room Homepage Solution
 
-![Design preview for the Room homepage coding challenge](./design/desktop-preview.jpg)
+This is a solution to the [Room homepage challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/room-homepage-BtdBY_ENq). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+## Overview
+This project is a solution to the Room homepage challenge on Frontend Mentor. The challenge involves creating a responsive homepage for a furniture brand, incorporating features such as a slideshow and a responsive navigation menu. The project aims to provide a seamless user experience across different devices and screen sizes.
+### The challenge
 
-**To do this challenge, you need a basic understanding of HTML, CSS and JavaScript.**
-
-## The challenge
-
-Your challenge is to build out this e-commerce homepage and get it looking as close to the design as possible.
-
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-Your users should be able to:
+Users should be able to:
 
 - View the optimal layout for the site depending on their device's screen size
 - See hover states for all interactive elements on the page
 - Navigate the slider using either their mouse/trackpad or keyboard
 
-Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+### Screenshot
 
-## Where to find everything
+![Room Homepage Screenshot](./screenshots/screenshoot1.png)
+![Room Homepage Screenshot](./screenshots/screen2.png)
+![Room Homepage Screenshot](./screenshots/screen3.png)
+![Room Homepage Screenshot](./screenshots/mobilehscreen.jpg)
+![Room Homepage Screenshot](./screenshots/mobilescreen.jpg)
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+### Links
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+- Solution URL: [GitHub Repository](https://github.com/YUSSIF62/room-homepage-test)
+- Live Site URL: [Room Homepage Live](https://room-homepage-test.netlify.app/)
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+## My process
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+### Built with
 
-## Building your project
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- [React](https://reactjs.org/) - JS library
+- [TypeScript](https://www.typescriptlang.org/) - For type safety
+- [Styled Components](https://styled-components.com/) - For styles
+- [Tailwind CSS](https://tailwindcss.com/) - For utility-first CSS framework
+- [Netlify](https://www.netlify.com/) - For deployment
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+### What I learned
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+Working on this project allowed me to deepen my understanding of several key technologies and concepts. Here are some highlights:
 
-## Deploying your project
+#### React Components
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+Creating reusable and functional components in React was a significant part of this project. Here is an example of a component that manages the header with a responsive navigation menu:
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+```tsx
+import React, { useState } from "react";
+import logo from "../images/logo.svg";
+import menu from "../images/icon-hamburger.svg";
+import close from "../images/icon-close.svg";
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+const Header: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-## Create a custom `README.md`
+  return (
+    <header className="absolute z-10 flex items-center justify-center w-full p-8 lg:items-center lg:justify-start">
+      <div>
+        <img src={logo} alt="Logo" className="lg:mr-8" />
+      </div>
+      <div className={`${isOpen ? "bg-black bg-opacity-75 absolute top-0 left-0 right-0 bottom-0 h-screen" : "bg-transparent"} lg:bg-transparent lg:h-auto lg:relative`}>
+        <nav className={`${isOpen ? "open w-full py-8 lg:py-0 lg:w-auto" : ""}`}>
+          <ul className="flex flex-wrap items-center justify-center gap-4 font-bold lg:font-normal">
+            <li>
+              <button className="transition-all duration-200 border-b-2 border-transparent hover:border-neutral-900 lg:text-white lg:hover:border-b-white">
+                home
+              </button>
+            </li>
+            <li>
+              <button className="transition-all duration-200 border-b-2 border-transparent hover:border-neutral-900 lg:text-white lg:hover:border-b-white">
+                shop
+              </button>
+            </li>
+            <li>
+              <button className="transition-all duration-200 border-b-2 border-transparent hover:border-neutral-900 lg:text-white lg:hover:border-b-white">
+                about
+              </button>
+            </li>
+            <li>
+              <button className="transition-all duration-200 border-b-2 border-transparent hover:border-neutral-900 lg:text-white lg:hover:border-b-white">
+                contact
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div className="absolute z-20 left-8 top-8 lg:hidden">
+        {isOpen ? (
+          <button onClick={() => setIsOpen(false)}>
+            <img src={close} alt="Close Menu" />
+          </button>
+        ) : (
+          <button onClick={() => setIsOpen(true)}>
+            <img src={menu} alt="Open Menu" />
+          </button>
+        )}
+      </div>
+    </header>
+  );
+};
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+export default Header;
+```
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+#### Responsive Design
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+Using CSS Grid and Flexbox allowed me to create a responsive layout that adapts to different screen sizes. Here's a snippet showing how I used CSS Grid:
 
-## Submitting your solution
+```css
+.section {
+  display: grid;
+  grid-template-columns: 1fr;
+}
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+@media (min-width: 1024px) {
+  .section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+```
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+#### State Management
 
-## Sharing your solution
+Handling state in a functional React component to manage a slideshow was an interesting challenge. Here's a simplified example:
 
-There are multiple places you can share your solution:
+```tsx
+const Showcase: React.FC = () => {
+  const [slideIndex, setSlideIndex] = useState<number>(1);
 
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+  function nextSlide() {
+    setSlideIndex((prevIndex) => (prevIndex !== data.length ? prevIndex + 1 : 1));
+  }
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
+  function previousSlide() {
+    setSlideIndex((prevIndex) => (prevIndex !== 1 ? prevIndex - 1 : data.length));
+  }
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
+  return (
+    <section>
+      {data.map((item, index) => (
+        <article key={item.id} className={slideIndex === index + 1 ? "grid grid-cols-1 lg:grid-cols-2 lg:place-items-center" : "hidden"}>
+          <img src={item.desktop} alt={item.title} className="w-full" />
+          <div className="relative p-8 lg:p-12">
+            <h1 className="px-4 text-4xl font-bold text-slate-900 lg:text-5xl">{item.title}</h1>
+            <p className="px-4 my-2 opacity-65 text-slate-900">{item.desc}</p>
+          </div>
+        </article>
+      ))}
+    </section>
+  );
+};
 
-## Got feedback for us?
+export default Showcase;
+```
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
+### Continued development
 
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
+In future projects, I plan to:
 
-**Have fun building!** 🚀
+- Further explore advanced state management techniques, such as using Redux or Context API for more complex applications.
+- Improve my skills in animations and transitions to create more interactive and engaging user interfaces.
+- Deepen my understanding of accessibility best practices to ensure all my projects are usable by as many people as possible.
+
+### Useful resources
+
+- [React Documentation](https://reactjs.org/docs/getting-started.html) - This is an excellent resource for understanding React and its ecosystem.
+- [Styled Components Documentation](https://styled-components.com/docs) - This helped me a lot with styling my React components efficiently.
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs) - This is a comprehensive guide for using Tailwind CSS in your projects.
+- [CSS Tricks](https://css-tricks.com/) - A great resource for all things CSS, including Flexbox and Grid.
+
+## Author
+
+- Website - [Yussif Abdul-Rahaman](https://yussifabdul-rahaman.netlify.app/)
+- Frontend Mentor - [@YUSSIF62](https://www.frontendmentor.io/profile/YUSSIF62)
+- Twitter - [@YussifGomda9247](https://x.com/YussifGomda9247)
+
+## Acknowledgments
+I would like to thank the Frontend Mentor community for their valuable feedback and support throughout this project. Special thanks to anyone who reviewed my code and provided suggestions for improvements. Your insights were incredibly helpful!
