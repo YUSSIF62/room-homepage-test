@@ -1,6 +1,6 @@
-# Frontend Mentor - Room homepage solution
+# Frontend Mentor - Room Homepage Solution
 
-This is a solution to the [Room homepage challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/room-homepage-BtdBY_ENq). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Room homepage challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/room-homepage-BtdBY_ENq). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -16,8 +16,6 @@ This is a solution to the [Room homepage challenge on Frontend Mentor](https://w
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -30,20 +28,17 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Room Homepage Screenshot](./screenshots/screenshoot1.png)
+![Room Homepage Screenshot](./screenshots/screen2.png)
+![Room Homepage Screenshot](./screenshots/screen3.png)
+![Room Homepage Screenshot](./screenshots/mobilehscreen.jpg)
+![Room Homepage Screenshot](./screenshots/mobilescreen.jpg)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [GitHub Repository](https://github.com/YUSSIF62/room-homepage-test)
+- Live Site URL: [Room Homepage Live](https://room-homepage-test.netlify.app/)
 
 ## My process
 
@@ -55,58 +50,149 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - CSS Grid
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
+- [TypeScript](https://www.typescriptlang.org/) - For type safety
 - [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- [Tailwind CSS](https://tailwindcss.com/) - For utility-first CSS framework
+- [Netlify](https://www.netlify.com/) - For deployment
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+Working on this project allowed me to deepen my understanding of several key technologies and concepts. Here are some highlights:
 
-To see how you can add code snippets, see below:
+#### React Components
 
-```html
-<h1>Some HTML code I'm proud of</h1>
+Creating reusable and functional components in React was a significant part of this project. Here is an example of a component that manages the header with a responsive navigation menu:
+
+```tsx
+import React, { useState } from "react";
+import logo from "../images/logo.svg";
+import menu from "../images/icon-hamburger.svg";
+import close from "../images/icon-close.svg";
+
+const Header: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <header className="absolute z-10 flex items-center justify-center w-full p-8 lg:items-center lg:justify-start">
+      <div>
+        <img src={logo} alt="Logo" className="lg:mr-8" />
+      </div>
+      <div className={`${isOpen ? "bg-black bg-opacity-75 absolute top-0 left-0 right-0 bottom-0 h-screen" : "bg-transparent"} lg:bg-transparent lg:h-auto lg:relative`}>
+        <nav className={`${isOpen ? "open w-full py-8 lg:py-0 lg:w-auto" : ""}`}>
+          <ul className="flex flex-wrap items-center justify-center gap-4 font-bold lg:font-normal">
+            <li>
+              <button className="transition-all duration-200 border-b-2 border-transparent hover:border-neutral-900 lg:text-white lg:hover:border-b-white">
+                home
+              </button>
+            </li>
+            <li>
+              <button className="transition-all duration-200 border-b-2 border-transparent hover:border-neutral-900 lg:text-white lg:hover:border-b-white">
+                shop
+              </button>
+            </li>
+            <li>
+              <button className="transition-all duration-200 border-b-2 border-transparent hover:border-neutral-900 lg:text-white lg:hover:border-b-white">
+                about
+              </button>
+            </li>
+            <li>
+              <button className="transition-all duration-200 border-b-2 border-transparent hover:border-neutral-900 lg:text-white lg:hover:border-b-white">
+                contact
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div className="absolute z-20 left-8 top-8 lg:hidden">
+        {isOpen ? (
+          <button onClick={() => setIsOpen(false)}>
+            <img src={close} alt="Close Menu" />
+          </button>
+        ) : (
+          <button onClick={() => setIsOpen(true)}>
+            <img src={menu} alt="Open Menu" />
+          </button>
+        )}
+      </div>
+    </header>
+  );
+};
+
+export default Header;
 ```
+
+#### Responsive Design
+
+Using CSS Grid and Flexbox allowed me to create a responsive layout that adapts to different screen sizes. Here's a snippet showing how I used CSS Grid:
+
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.section {
+  display: grid;
+  grid-template-columns: 1fr;
 }
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+
+@media (min-width: 1024px) {
+  .section {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+#### State Management
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+Handling state in a functional React component to manage a slideshow was an interesting challenge. Here's a simplified example:
+
+```tsx
+const Showcase: React.FC = () => {
+  const [slideIndex, setSlideIndex] = useState<number>(1);
+
+  function nextSlide() {
+    setSlideIndex((prevIndex) => (prevIndex !== data.length ? prevIndex + 1 : 1));
+  }
+
+  function previousSlide() {
+    setSlideIndex((prevIndex) => (prevIndex !== 1 ? prevIndex - 1 : data.length));
+  }
+
+  return (
+    <section>
+      {data.map((item, index) => (
+        <article key={item.id} className={slideIndex === index + 1 ? "grid grid-cols-1 lg:grid-cols-2 lg:place-items-center" : "hidden"}>
+          <img src={item.desktop} alt={item.title} className="w-full" />
+          <div className="relative p-8 lg:p-12">
+            <h1 className="px-4 text-4xl font-bold text-slate-900 lg:text-5xl">{item.title}</h1>
+            <p className="px-4 my-2 opacity-65 text-slate-900">{item.desc}</p>
+          </div>
+        </article>
+      ))}
+    </section>
+  );
+};
+
+export default Showcase;
+```
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+In future projects, I plan to:
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- Further explore advanced state management techniques, such as using Redux or Context API for more complex applications.
+- Improve my skills in animations and transitions to create more interactive and engaging user interfaces.
+- Deepen my understanding of accessibility best practices to ensure all my projects are usable by as many people as possible.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [React Documentation](https://reactjs.org/docs/getting-started.html) - This is an excellent resource for understanding React and its ecosystem.
+- [Styled Components Documentation](https://styled-components.com/docs) - This helped me a lot with styling my React components efficiently.
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs) - This is a comprehensive guide for using Tailwind CSS in your projects.
+- [CSS Tricks](https://css-tricks.com/) - A great resource for all things CSS, including Flexbox and Grid.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Website - [Yussif Abdul-Rahaman](https://www.your-site.com)
+- Frontend Mentor - [@YUSSIF62](https://www.frontendmentor.io/profile/YUSSIF62)
 - Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+I would like to thank the Frontend Mentor community for their valuable feedback and support throughout this project. Special thanks to anyone who reviewed my code and provided suggestions for improvements. Your insights were incredibly helpful!
